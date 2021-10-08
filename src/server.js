@@ -1,6 +1,8 @@
 import express from 'express';
 import responseTime from "response-time";
 
+import charactersRoutes from './routes/characters.routes.js';
+
 // Initializations
 const app = express();
 
@@ -11,6 +13,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(responseTime());
 
 // Routes
+app.use('/characters', charactersRoutes);
 
 // 404 handler
 app.use((req, res) => {
