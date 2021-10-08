@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-redis-caching",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Redis cache implementation on a Node.js REST API to improve HTTP responses speed.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "redis"
+  ],
+  "author": "Oscar Hernandez <os.hf024@gmail.com>",
+  "license": "MIT",
+  "repository": "git+https://github.com/OscarEHF/nodejs-redis-caching.git",
+  "homepage": "https://github.com/OscarEHF/nodejs-redis-caching#readme",
+  "bugs": "https://github.com/OscarEHF/nodejs-redis-caching/issues",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^3.0.0",
+    "redis": "^3.1.2",
+    "response-time": "^2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
