@@ -1,0 +1,10 @@
+@myApi = http://localhost:3000
+
+### All characters
+GET {{myApi}}/characters
+
+### Character by ID
+GET {{myApi}}/characters/2
+
+### Error 404
+GET {{myApi}}/err
