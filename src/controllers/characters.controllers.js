@@ -29,24 +29,34 @@ const cacheResponse = async ({ url, key }) => {
 
 export const characters = async (req, res) => {
 
-  const data = await cacheResponse({
-    url: 'https://rickandmortyapi.com/api/character',
-    key: 'characters'
-  });
+  try {
+    const data = await cacheResponse({
+      url: 'https://rickandmortyapi.com/api/character',
+      key: 'characters'
+    });
+  
+    res.json(data);
+  } catch (err) {
+    return res.status(err.response.status).json({ message: err.message });
+  }
 
-  res.json(data);
 
 };
 
 export const character = async (req, res) => {
 
-  const { id } = req.params;
+  try {
+    const { id } = req.params;
+  
+    const data = await cacheResponse({
+      url: `https://rickandmortyapi.com/api/character/${id}`,
+      key: id
+    });
+  
+    res.json(data);
+  } catch (err) {
+    return res.status(err.response.status).json({ message: err.message });
+  }
 
-  const data = await cacheResponse({
-    url: `https://rickandmortyapi.com/api/character/${id}`,
-    key: id
-  });
-
-  res.json(data);
 
 };
