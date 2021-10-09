@@ -38,6 +38,15 @@ export const characters = async (req, res) => {
 
 };
 
-export const character = (req, res) => {
-  res.json({ message: 'Character' });
+export const character = async (req, res) => {
+
+  const { id } = req.params;
+
+  const data = await cacheResponse({
+    url: `https://rickandmortyapi.com/api/character/${id}`,
+    key: id
+  });
+
+  res.json(data);
+
 };
