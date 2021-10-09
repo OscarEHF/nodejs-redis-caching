@@ -18,8 +18,8 @@
   "homepage": "https://github.com/OscarEHF/nodejs-redis-caching#readme",
   "bugs": "https://github.com/OscarEHF/nodejs-redis-caching/issues",
   "dependencies": {
+    "axios": "^0.22.0",
     "express": "^4.17.1",
-    "node-fetch": "^3.0.0",
     "redis": "^3.1.2",
     "response-time": "^2.3.2"
   },
